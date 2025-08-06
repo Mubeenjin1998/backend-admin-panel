@@ -78,15 +78,38 @@ router.post('/login', async (req, res) => {
   }
 });
 
+
 router.get('/users', verifyToken, async (req, res) => {
   try {
-    const users = await User.find({ createdBy: req.user.id }).select('-__v -password');
-    res.json(users);
+    const page = parseInt(req.query.page) || 1; 
+    const limit = 5; 
+    const skip = (page - 1) * limit;
+    const search = req.query.search || '';
+
+    let searchCondition = { createdBy: req.user.id };
+    if (search) {
+      searchCondition.$or = [
+        { username: { $regex: search, $options: 'i' } },
+        { email: { $regex: search, $options: 'i' } }
+      ];
+    }
+
+    const total = await User.countDocuments(searchCondition);
+    const users = await User.find(searchCondition)
+      .select('-__v -password')
+      .skip(skip)
+      .limit(limit);
+
+    res.json({
+      users,
+      total,
+      page,
+      totalPages: Math.ceil(total / limit)
+    });
   } catch (error) {
     res.status(500).json({ message: 'Server error' });
   }
 });
-
 router.post('/users', verifyToken, async (req, res) => {
   console.log('Creating user:', req.body);
   console.log(req.user,'----------------------------------------')
@@ -106,6 +129,62 @@ router.post('/users', verifyToken, async (req, res) => {
   }
 });
 
+//================================
+
+router.get('/users/:id', verifyToken, async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+    if (!user) return res.status(404).json({
+      success:false,
+      message: 'User not found' 
+    });
+    return res.status(200).json({
+      success:true,
+      user
+  });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+router.put('/users/:id', verifyToken, async (req, res) => {
+
+  const { username, email, role } = req.body;
+  const id = req.params.id;
+
+  try{
+    let findUser = await User.findById(id);
+    if(!findUser){  
+      return res.status(404).json({
+        success:false,
+        message: 'User not found' 
+      });
+    }
+    const updatedUser = await User.findByIdAndUpdate(id, {
+      username, email, role }, { new: true });
+    if (!updatedUser) { 
+      return res.status(404).json({
+         success:  false,
+         message: 'User not found'
+         });    
+    }
+    const userResponse = updatedUser.toObject();
+    return res.status(200).json({
+       success: true,
+       message: 'User updated successfully',
+       user: userResponse
+      });
+
+  }catch (error) {
+    res.status(400).json({ 
+      message: 'Error updating user',
+      error: error.message 
+    });
+  }
+
+})
+
+
 router.delete('/users/:id', async (req, res) => {
   try {
     const removedUser = await User.findByIdAndDelete(req.params.id);
@@ -118,27 +197,108 @@ router.delete('/users/:id', async (req, res) => {
   }
 });
 
-router.get('/products',verifyToken, async (req, res) => {
-  let baseurl = `${req.protocol}://${req.hostname}:${req.app.get('port') || 5000}/uploads`;
-    console.log('Base URL:', baseurl);
-  try {
-    const products = await Product.find({
-      createdBy: req.user.id
-    }).select('-__v');
-    if (!products.length) {
-      return res.status(404).json({ message: 'No products found' });
-    }
-    const newdata = products.map(product => {
+router.get('/products', verifyToken, async (req, res) => {
+  const baseurl = `${req.protocol}://${req.hostname}:${req.app.get('port') || 5000}/uploads`;
+  const { search = '', page = 1, limit = 10 } = req.query;
 
-      return {
-        ...product.toObject(),
-        imageUrl: product.imageUrl ? product.imageUrl.map((item)=> `${baseurl}/${item}`) : null
-       }})
-    res.json(newdata);
+  const pageNumber = parseInt(page) || 1;
+  const limitNumber = parseInt(limit) || 10;
+  const skip = (pageNumber - 1) * limitNumber;
+
+  const searchCondition = {
+    $or: [
+      { name: { $regex: search, $options: 'i' } },
+      { description: { $regex: search, $options: 'i' } }
+    ]
+  };
+
+  try {
+    const query = { createdBy: req.user.id, ...searchCondition };
+
+    const total = await Product.countDocuments(query);
+
+    const products = await Product.find(query)
+      .skip(skip)
+      .limit(limitNumber)
+      .select('-__v');
+
+    if (!products.length) {
+      return res.status(200).json({
+        success: true,
+        statusCode: 200,
+        message: 'No products found',
+        products: [],
+        total: 0,
+        page: pageNumber,
+        totalPages: 0
+      });
+    }
+
+    const formattedProducts = products.map(product => ({
+      ...product.toObject(),
+      imageUrl: product.imageUrl
+        ? product.imageUrl.map(item => `${baseurl}/${item}`)
+        : []
+    }));
+
+    res.status(200).json({
+      success: true,
+      statusCode: 200,
+      message: 'Products retrieved successfully',
+      products: formattedProducts,
+      total,
+      page: pageNumber,
+      totalPages: Math.ceil(total / limitNumber)
+    });
+
   } catch (error) {
-    res.status(500).json({ message: 'Server error' });
+    console.error('Error retrieving products:', error);
+    res.status(500).json({
+      success: false,
+      statusCode: 500,
+      message: 'Server error',
+      error: error.message
+    });
   }
 });
+
+//=============================rou
+router.get('/products/:id', verifyToken, async (req, res) => {
+
+  try {
+    const product = await Product.findById(req.params.id);   
+    if (!product) {
+      return res.status(404).json({success:false,
+        statusCode:404,
+        message: 'Product not found'
+         });
+    }
+    const baseurl = `${req.protocol}://${req.hostname}:${req.app.get('port')|| 5000}/uploads`;  
+      
+    const formattedProduct = {
+      ...product.toObject(),
+      imageUrl: product.imageUrl
+        ? product.imageUrl.map(item => `${baseurl}/${item}`)
+        : []
+    };
+    
+    res.status(200).json({
+      success: true,
+      statusCode: 200,
+      message: 'Product retrieved successfully',
+      product: formattedProduct
+    });
+  }
+  catch (error) {
+    console.error('Error retrieving product:', error);
+      res.status(500).json({
+      success: false,
+      statusCode: 500,
+      message: 'Server error',     
+      error: error.message
+    });
+  } 
+  });
 
 router.post('/products', verifyToken, upload.array('images', 5), async (req, res) => {
   const { name, description, price, stock } = req.body;
@@ -169,6 +329,51 @@ router.post('/products', verifyToken, upload.array('images', 5), async (req, res
     res.status(400).json({ message: 'Error creating product', error: error.message });
   }
 });
+
+router.put('/products/:id', verifyToken, upload.array('images', 5), async (req, res) =>{
+try{
+  const { name, description, price, stock } = req.body;
+  const id = req.params.id;
+  let imageUrl = [];
+  if (req.files && req.files.length > 0){
+    imageUrl = req.files.map((file)=>file.filename);
+  }
+ 
+  let updateproduct = await Product.findByIdAndUpdate(id, {
+    name, 
+    description, 
+    price, 
+    stock, 
+    imageUrl: imageUrl.length > 0 ? imageUrl : updateproduct.imageUrl
+  }, { new: true });
+   if(!updateproduct){
+    return res.status(404).json({
+      success:false,
+      statusCode: 404,
+      message: 'Product not found'
+    });
+  }
+
+  return res.status(200).json({success:true,
+    statusCode: 200,
+    message: 'Product updated successfully',
+    product: {
+      ...updateproduct.toObject(),
+      imageUrl: updateproduct.imageUrl.map(item => `${req.protocol}://${req.hostname}:${req.app.get('port') || 5000}/uploads/${item}`)
+    }
+  });
+
+}catch(error) {
+  return res.status(500).json({ 
+    message: 'Error updating product',
+    error: error.message 
+  });
+}
+  })
+
+
+
+
 router.delete('/products/:id', async (req, res) => {
   try {
     const removedProduct = await Product.findByIdAndDelete(req.params.id);
