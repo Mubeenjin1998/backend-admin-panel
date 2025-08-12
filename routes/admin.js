@@ -6,25 +6,25 @@ const User = require('../models/User');
 const Product = require('../models/Product');
 const Analytics = require('../models/Analytics');
 const upload = require('../middleware/upload');
-
 const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret';
+const { verifyToken, adminOnly, optionalAuth } = require('../middleware/auth');
 
 
 
-const verifyToken = (req, res, next) => {
-  const authHeader = req.headers.authorization;
-  if (!authHeader) return res.status(401).json({ message: 'No token provided' });
+// const verifyToken = (req, res, next) => {
+//   const authHeader = req.headers.authorization;
+//   if (!authHeader) return res.status(401).json({ message: 'No token provided' });
 
-  const token = authHeader.split(' ')[1];
-  if (!token) return res.status(401).json({ message: 'No token provided' });
+//   const token = authHeader.split(' ')[1];
+//   if (!token) return res.status(401).json({ message: 'No token provided' });
 
-  jwt.verify(token, JWT_SECRET, (err, decoded) => {
-    if (err) return res.status(401).json({ message: 'Invalid token' });
-    if (decoded.role !== 'admin') return res.status(403).json({ message: 'Forbidden: Admins only' });
-    req.user = decoded;
-    next();
-  });
-};
+//   jwt.verify(token, JWT_SECRET, (err, decoded) => {
+//     if (err) return res.status(401).json({ message: 'Invalid token' });
+//     if (decoded.role !== 'admin') return res.status(403).json({ message: 'Forbidden: Admins only' });
+//     req.user = decoded;
+//     next();
+//   });
+// };
 
 router.post('/register', async (req, res) => {
   const { username, email, password, role } = req.body;
@@ -56,6 +56,8 @@ router.post('/login', async (req, res) => {
        message: 'Invalid credentials'
        });
 
+       console.log('User found:', user);
+
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(401).json({ message: 'Invalid credentials' });
 
@@ -79,7 +81,7 @@ router.post('/login', async (req, res) => {
 });
 
 
-router.get('/users', verifyToken, async (req, res) => {
+router.get('/users', verifyToken,adminOnly, async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1; 
     const limit = 5; 
@@ -147,43 +149,139 @@ router.get('/users/:id', verifyToken, async (req, res) => {
   }
 });
 
-router.put('/users/:id', verifyToken, async (req, res) => {
+// router.put('/users/:id', verifyToken, async (req, res) => {
 
+//   const { username, email, role } = req.body;
+//   const id = req.params.id;
+
+//   try{
+//     let findUser = await User.findById(id);
+//     if(!findUser){  
+//       return res.status(404).json({
+//         success:false,
+//         message: 'User not found' 
+//       });
+//     }
+//     const updatedUser = await User.findByIdAndUpdate(id, {
+//       username, email, role }, { new: true });
+//     if (!updatedUser) { 
+//       return res.status(404).json({
+//          success:  false,
+//          message: 'User not found'
+//          });    
+//     }
+//     const userResponse = updatedUser.toObject();
+//     return res.status(200).json({
+//        success: true,
+//        message: 'User updated successfully',
+//        user: userResponse
+//       });
+
+//   }catch (error) {
+//     res.status(400).json({ 
+//       message: 'Error updating user',
+//       error: error.message 
+//     });
+//   }
+
+// })
+router.put('/users/:id', verifyToken, async (req, res) => {
   const { username, email, role } = req.body;
   const id = req.params.id;
 
-  try{
+  try {
     let findUser = await User.findById(id);
-    if(!findUser){  
+    if (!findUser) {
       return res.status(404).json({
-        success:false,
-        message: 'User not found' 
+        success: false,
+        message: 'User not found'
       });
     }
-    const updatedUser = await User.findByIdAndUpdate(id, {
-      username, email, role }, { new: true });
-    if (!updatedUser) { 
-      return res.status(404).json({
-         success:  false,
-         message: 'User not found'
-         });    
+
+    // Check for duplicate username (if username is being updated)
+    if (username && username !== findUser.username) {
+      const duplicateUsername = await User.findOne({ 
+        username: username,
+        _id: { $ne: id }
+      });
+      
+      if (duplicateUsername) {
+        return res.status(409).json({
+          success: false,
+          message: 'Username already exists'
+        });
+      }
     }
+
+    // Check for duplicate email (if email is being updated)
+    if (email && email !== findUser.email) {
+      const duplicateEmail = await User.findOne({ 
+        email: email,
+        _id: { $ne: id }
+      });
+      
+      if (duplicateEmail) {
+        return res.status(409).json({
+          success: false,
+          message: 'Email already exists'
+        });
+      }
+    }
+
+    const updatedUser = await User.findByIdAndUpdate(id, {
+      username, email, role 
+    }, { new: true });
+
+    if (!updatedUser) {
+      return res.status(404).json({
+        success: false,
+        message: 'User not found'
+      });
+    }
+
     const userResponse = updatedUser.toObject();
     return res.status(200).json({
-       success: true,
-       message: 'User updated successfully',
-       user: userResponse
-      });
+      success: true,
+      message: 'User updated successfully',
+      user: userResponse
+    });
 
-  }catch (error) {
-    res.status(400).json({ 
+  } catch (error) {
+    // Handle MongoDB duplicate key errors
+    if (error.code === 11000) {
+      const duplicateField = error.message.includes('username') ? 'username' : 
+                           error.message.includes('email') ? 'email' : 'field';
+      
+      return res.status(409).json({
+        success: false,
+        message: `${duplicateField.charAt(0).toUpperCase() + duplicateField.slice(1)} already exists`
+      });
+    }
+
+    // Handle validation errors
+    if (error.name === 'ValidationError') {
+      return res.status(400).json({
+        success: false,
+        message: 'Validation failed',
+        error: error.message
+      });
+    }
+
+    // Handle cast errors
+    if (error.name === 'CastError') {
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid data format'
+      });
+    }
+
+    res.status(500).json({
+      success: false,
       message: 'Error updating user',
-      error: error.message 
+      error: error.message
     });
   }
-
-})
-
+});
 
 router.delete('/users/:id', async (req, res) => {
   try {
@@ -199,18 +297,42 @@ router.delete('/users/:id', async (req, res) => {
 
 router.get('/products', verifyToken, async (req, res) => {
   const baseurl = `${req.protocol}://${req.hostname}:${req.app.get('port') || 5000}/uploads`;
-  const { search = '', page = 1, limit = 10 } = req.query;
+  const { search = '', page = 1, limit = 5 ,category_id,subcategory_id,store_id} = req.query;
 
-  const pageNumber = parseInt(page) || 1;
-  const limitNumber = parseInt(limit) || 10;
+  const pageNumber = Math.max(1, parseInt(page) || 1);
+  const limitNumber = Math.max(1, Math.min(100, parseInt(limit) || 5)); 
   const skip = (pageNumber - 1) * limitNumber;
 
-  const searchCondition = {
+  // const searchCondition = search ? {
+  //   $or: [
+  //     { name: { $regex: search, $options: 'i' } },
+  //     {category_id:category_id,subcategory_id:subcategory_id,store_id:store_id},
+  //     { description: { $regex: search, $options: 'i' } }
+  //   ]
+  // } : {};
+  const searchCondition = {};
+const andConditions = [];
+
+// Text search
+if (search) {
+  andConditions.push({
     $or: [
       { name: { $regex: search, $options: 'i' } },
       { description: { $regex: search, $options: 'i' } }
     ]
-  };
+  });
+}
+
+// Dynamic filters
+if (category_id) andConditions.push({ category_id });
+if (subcategory_id) andConditions.push({ subcategory_id });
+if (store_id) andConditions.push({ store_id });
+
+// Apply conditions
+if (andConditions.length > 0) {
+  searchCondition.$and = andConditions;
+}
+  
 
   try {
     const query = { createdBy: req.user.id, ...searchCondition };
@@ -218,21 +340,10 @@ router.get('/products', verifyToken, async (req, res) => {
     const total = await Product.countDocuments(query);
 
     const products = await Product.find(query)
+      .sort({ createdAt: -1 }) 
       .skip(skip)
       .limit(limitNumber)
       .select('-__v');
-
-    if (!products.length) {
-      return res.status(200).json({
-        success: true,
-        statusCode: 200,
-        message: 'No products found',
-        products: [],
-        total: 0,
-        page: pageNumber,
-        totalPages: 0
-      });
-    }
 
     const formattedProducts = products.map(product => ({
       ...product.toObject(),
@@ -244,10 +355,11 @@ router.get('/products', verifyToken, async (req, res) => {
     res.status(200).json({
       success: true,
       statusCode: 200,
-      message: 'Products retrieved successfully',
+      message: products.length ? 'Products retrieved successfully' : 'No products found',
       products: formattedProducts,
       total,
       page: pageNumber,
+      limit: limitNumber,
       totalPages: Math.ceil(total / limitNumber)
     });
 
@@ -262,7 +374,6 @@ router.get('/products', verifyToken, async (req, res) => {
   }
 });
 
-//=============================rou
 router.get('/products/:id', verifyToken, async (req, res) => {
 
   try {
@@ -301,7 +412,7 @@ router.get('/products/:id', verifyToken, async (req, res) => {
   });
 
 router.post('/products', verifyToken, upload.array('images', 5), async (req, res) => {
-  const { name, description, price, stock } = req.body;
+  const { name, description, price, stock,category_id,subcategory_id,store_id } = req.body;
   
   console.log('Creating product:', req.body);
   console.log('Files received:', req.files); 
@@ -317,11 +428,14 @@ router.post('/products', verifyToken, upload.array('images', 5), async (req, res
       name, 
       description, 
       price, 
-      stock, 
+      stock,
+      category_id,
+      subcategory_id,
+      store_id, 
       imageUrl: imageUrl, 
       createdBy: req.user.id 
     });
-    
+    console.log("please cheke")
     const savedProduct = await newProduct.save();
     res.status(201).json(savedProduct);
   } catch (error) {
@@ -332,19 +446,34 @@ router.post('/products', verifyToken, upload.array('images', 5), async (req, res
 
 router.put('/products/:id', verifyToken, upload.array('images', 5), async (req, res) =>{
 try{
-  const { name, description, price, stock } = req.body;
+  const { name, description, price, stock,category_id,
+      subcategory_id,
+      store_id } = req.body;
   const id = req.params.id;
   let imageUrl = [];
   if (req.files && req.files.length > 0){
     imageUrl = req.files.map((file)=>file.filename);
   }
+
+  const existingProduct = await Product.findById(id);
+if (!existingProduct) {
+  return res.status(404).json({
+    success: false,
+    statusCode: 404,
+    message: 'Product not found'
+  });
+}
+
  
-  let updateproduct = await Product.findByIdAndUpdate(id, {
+  const  updateproduct = await Product.findByIdAndUpdate(id, {
     name, 
     description, 
     price, 
-    stock, 
-    imageUrl: imageUrl.length > 0 ? imageUrl : updateproduct.imageUrl
+    stock,
+    category_id,
+    subcategory_id,
+    store_id, 
+    imageUrl: imageUrl.length > 0 ? imageUrl : existingProduct.imageUrl
   }, { new: true });
    if(!updateproduct){
     return res.status(404).json({

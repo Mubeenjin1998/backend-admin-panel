@@ -5,6 +5,21 @@ const ProductSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  category_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Category',
+    required: true
+  },
+  subcategory_id:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Subcategory',
+    required: true
+  },
+  store_id:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Shop',
+    required: true
+  },
   description: String,
   price: {
     type: Number,

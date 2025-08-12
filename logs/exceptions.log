@@ -1,0 +1,3770 @@
+{
+  error: Error: Cannot find module './middleware/errorMiddleware'
+  Require stack:
+  - C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js
+      at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+      at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+      at Function._load (node:internal/modules/cjs/loader:1175:37)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:44:36)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module './middleware/errorMiddleware'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    "Error: Cannot find module './middleware/errorMiddleware'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:44:36)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  stack: "Error: Cannot find module './middleware/errorMiddleware'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:44:36)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:27:30 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 1724,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 82903040,
+      heapTotal: 35348480,
+      heapUsed: 24311008,
+      external: 20690226,
+      arrayBuffers: 18264479
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 72798.75 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._resolveFilename',
+      line: 1365,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'defaultResolveImpl',
+      line: 1021,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'resolveForCJSWithHooks',
+      line: 1026,
+      method: null,
+      native: false
+    },
+    {
+      column: 37,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1175,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 36,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 44,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:27:30'
+}
+{
+  error: Error: Cannot find module './middleware/errorMiddleware'
+  Require stack:
+  - C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js
+      at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+      at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+      at Function._load (node:internal/modules/cjs/loader:1175:37)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:44:36)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module './middleware/errorMiddleware'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    "Error: Cannot find module './middleware/errorMiddleware'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:44:36)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  stack: "Error: Cannot find module './middleware/errorMiddleware'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:44:36)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:29:07 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 8980,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 83152896,
+      heapTotal: 35086336,
+      heapUsed: 24584160,
+      external: 20690226,
+      arrayBuffers: 18264479
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 72895.968 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._resolveFilename',
+      line: 1365,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'defaultResolveImpl',
+      line: 1021,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'resolveForCJSWithHooks',
+      line: 1026,
+      method: null,
+      native: false
+    },
+    {
+      column: 37,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1175,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 36,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 44,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:29:07'
+}
+{
+  error: Error: Cannot find module './middleware/loggerMiddleware'
+  Require stack:
+  - C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js
+      at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+      at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+      at Function._load (node:internal/modules/cjs/loader:1175:37)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:45:27)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module './middleware/loggerMiddleware'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    "Error: Cannot find module './middleware/loggerMiddleware'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:45:27)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  stack: "Error: Cannot find module './middleware/loggerMiddleware'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:45:27)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:31:53 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 14692,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 82448384,
+      heapTotal: 35348480,
+      heapUsed: 24119856,
+      external: 20690226,
+      arrayBuffers: 18264479
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73062.203 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._resolveFilename',
+      line: 1365,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'defaultResolveImpl',
+      line: 1021,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'resolveForCJSWithHooks',
+      line: 1026,
+      method: null,
+      native: false
+    },
+    {
+      column: 37,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1175,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 45,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:31:53'
+}
+{
+  error: Error: Cannot find module './middleware/loggerMiddleware'
+  Require stack:
+  - C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js
+      at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+      at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+      at Function._load (node:internal/modules/cjs/loader:1175:37)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:45:27)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module './middleware/loggerMiddleware'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    "Error: Cannot find module './middleware/loggerMiddleware'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:45:27)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  stack: "Error: Cannot find module './middleware/loggerMiddleware'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:45:27)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:32:46 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 19088,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 82915328,
+      heapTotal: 35348480,
+      heapUsed: 24052448,
+      external: 20690226,
+      arrayBuffers: 18264479
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73115.468 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._resolveFilename',
+      line: 1365,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'defaultResolveImpl',
+      line: 1021,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'resolveForCJSWithHooks',
+      line: 1026,
+      method: null,
+      native: false
+    },
+    {
+      column: 37,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1175,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 27,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 45,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:32:46'
+}
+{
+  error: Error: Cannot find module './routes'
+  Require stack:
+  - C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js
+      at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+      at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+      at Function._load (node:internal/modules/cjs/loader:1175:37)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:48:16)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:48:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  stack: "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:48:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:32:59 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 7508,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 82354176,
+      heapTotal: 35348480,
+      heapUsed: 24200496,
+      external: 20690226,
+      arrayBuffers: 18264479
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73127.75 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._resolveFilename',
+      line: 1365,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'defaultResolveImpl',
+      line: 1021,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'resolveForCJSWithHooks',
+      line: 1026,
+      method: null,
+      native: false
+    },
+    {
+      column: 37,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1175,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 16,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 48,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:32:59'
+}
+{
+  error: Error: Cannot find module './routes'
+  Require stack:
+  - C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js
+      at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+      at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+      at Function._load (node:internal/modules/cjs/loader:1175:37)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:48:16)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:48:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  stack: "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:48:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:33:17 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 9904,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 83480576,
+      heapTotal: 35086336,
+      heapUsed: 25324480,
+      external: 20690482,
+      arrayBuffers: 18264735
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73146.39 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._resolveFilename',
+      line: 1365,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'defaultResolveImpl',
+      line: 1021,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'resolveForCJSWithHooks',
+      line: 1026,
+      method: null,
+      native: false
+    },
+    {
+      column: 37,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1175,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 16,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 48,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:33:17'
+}
+{
+  error: TypeError: upload.array is not a function
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\routes\admin.js:388:46)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14)
+      at Object..js (node:internal/modules/cjs/loader:1820:10)
+      at Module.load (node:internal/modules/cjs/loader:1423:32)
+      at Function._load (node:internal/modules/cjs/loader:1246:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:4:21),
+  level: 'error',
+  message: 'uncaughtException: upload.array is not a function\n' +
+    'TypeError: upload.array is not a function\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js:388:46)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1820:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1423:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1246:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:4:21)',
+  stack: 'TypeError: upload.array is not a function\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js:388:46)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1820:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1423:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1246:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:4:21)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:36:59 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 19692,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 86441984,
+      heapTotal: 36659200,
+      heapUsed: 22531472,
+      external: 20690482,
+      arrayBuffers: 18264735
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73368.359 },
+  trace: [
+    {
+      column: 46,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js',
+      function: null,
+      line: 388,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1820,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1423,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1246,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 21,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 4,
+      method: null,
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:36:59'
+}
+{
+  error: TypeError: upload.array is not a function
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\routes\admin.js:388:46)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14)
+      at Object..js (node:internal/modules/cjs/loader:1820:10)
+      at Module.load (node:internal/modules/cjs/loader:1423:32)
+      at Function._load (node:internal/modules/cjs/loader:1246:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:4:21),
+  level: 'error',
+  message: 'uncaughtException: upload.array is not a function\n' +
+    'TypeError: upload.array is not a function\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js:388:46)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1820:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1423:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1246:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:4:21)',
+  stack: 'TypeError: upload.array is not a function\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js:388:46)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1820:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1423:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1246:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:4:21)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:37:54 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 12180,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 86204416,
+      heapTotal: 36659200,
+      heapUsed: 22557048,
+      external: 20690482,
+      arrayBuffers: 18264735
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73423.203 },
+  trace: [
+    {
+      column: 46,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js',
+      function: null,
+      line: 388,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1820,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1423,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1246,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 21,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 4,
+      method: null,
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:37:54'
+}
+{
+  error: TypeError: upload.array is not a function
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\routes\admin.js:388:46)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14)
+      at Object..js (node:internal/modules/cjs/loader:1820:10)
+      at Module.load (node:internal/modules/cjs/loader:1423:32)
+      at Function._load (node:internal/modules/cjs/loader:1246:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:4:21),
+  level: 'error',
+  message: 'uncaughtException: upload.array is not a function\n' +
+    'TypeError: upload.array is not a function\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js:388:46)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1820:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1423:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1246:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:4:21)',
+  stack: 'TypeError: upload.array is not a function\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js:388:46)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1820:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1423:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1246:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:4:21)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:38:19 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 9464,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 86020096,
+      heapTotal: 37183488,
+      heapUsed: 22471304,
+      external: 20690482,
+      arrayBuffers: 18264735
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73447.843 },
+  trace: [
+    {
+      column: 46,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js',
+      function: null,
+      line: 388,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1820,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1423,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1246,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 21,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 4,
+      method: null,
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:38:19'
+}
+{
+  error: TypeError: upload.array is not a function
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\routes\admin.js:388:46)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14)
+      at Object..js (node:internal/modules/cjs/loader:1820:10)
+      at Module.load (node:internal/modules/cjs/loader:1423:32)
+      at Function._load (node:internal/modules/cjs/loader:1246:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:4:21),
+  level: 'error',
+  message: 'uncaughtException: upload.array is not a function\n' +
+    'TypeError: upload.array is not a function\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js:388:46)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1820:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1423:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1246:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:4:21)',
+  stack: 'TypeError: upload.array is not a function\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js:388:46)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1820:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1423:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1246:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:4:21)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:38:43 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 18084,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 86409216,
+      heapTotal: 36921344,
+      heapUsed: 22416576,
+      external: 20690482,
+      arrayBuffers: 18264735
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73471.656 },
+  trace: [
+    {
+      column: 46,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js',
+      function: null,
+      line: 388,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1820,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1423,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1246,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 21,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 4,
+      method: null,
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:38:43'
+}
+{
+  error: TypeError: upload.array is not a function
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\routes\admin.js:388:46)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14)
+      at Object..js (node:internal/modules/cjs/loader:1820:10)
+      at Module.load (node:internal/modules/cjs/loader:1423:32)
+      at Function._load (node:internal/modules/cjs/loader:1246:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:4:21),
+  level: 'error',
+  message: 'uncaughtException: upload.array is not a function\n' +
+    'TypeError: upload.array is not a function\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js:388:46)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1820:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1423:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1246:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:4:21)',
+  stack: 'TypeError: upload.array is not a function\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js:388:46)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1820:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1423:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1246:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:4:21)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:38:53 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 7064,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 85835776,
+      heapTotal: 36921344,
+      heapUsed: 22186512,
+      external: 20566241,
+      arrayBuffers: 18264559
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73482.296 },
+  trace: [
+    {
+      column: 46,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js',
+      function: null,
+      line: 388,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1820,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1423,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1246,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 21,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 4,
+      method: null,
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:38:53'
+}
+{
+  error: TypeError: upload.array is not a function
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\routes\admin.js:388:46)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14)
+      at Object..js (node:internal/modules/cjs/loader:1820:10)
+      at Module.load (node:internal/modules/cjs/loader:1423:32)
+      at Function._load (node:internal/modules/cjs/loader:1246:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:4:21),
+  level: 'error',
+  message: 'uncaughtException: upload.array is not a function\n' +
+    'TypeError: upload.array is not a function\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js:388:46)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1820:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1423:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1246:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:4:21)',
+  stack: 'TypeError: upload.array is not a function\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js:388:46)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1820:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1423:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1246:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:4:21)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:39:05 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 19204,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 85831680,
+      heapTotal: 36659200,
+      heapUsed: 22314240,
+      external: 20566241,
+      arrayBuffers: 18264559
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73494.312 },
+  trace: [
+    {
+      column: 46,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js',
+      function: null,
+      line: 388,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1820,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1423,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1246,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 21,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 4,
+      method: null,
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:39:05'
+}
+{
+  error: TypeError: upload.array is not a function
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\routes\admin.js:388:46)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14)
+      at Object..js (node:internal/modules/cjs/loader:1820:10)
+      at Module.load (node:internal/modules/cjs/loader:1423:32)
+      at Function._load (node:internal/modules/cjs/loader:1246:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:4:21),
+  level: 'error',
+  message: 'uncaughtException: upload.array is not a function\n' +
+    'TypeError: upload.array is not a function\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js:388:46)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1820:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1423:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1246:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:4:21)',
+  stack: 'TypeError: upload.array is not a function\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js:388:46)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1820:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1423:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1246:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:4:21)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:39:44 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 6908,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 85942272,
+      heapTotal: 36659200,
+      heapUsed: 22486064,
+      external: 20690482,
+      arrayBuffers: 18264735
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73532.906 },
+  trace: [
+    {
+      column: 46,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js',
+      function: null,
+      line: 388,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1820,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1423,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1246,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 21,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 4,
+      method: null,
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:39:44'
+}
+{
+  error: TypeError: upload.array is not a function
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\routes\admin.js:388:46)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14)
+      at Object..js (node:internal/modules/cjs/loader:1820:10)
+      at Module.load (node:internal/modules/cjs/loader:1423:32)
+      at Function._load (node:internal/modules/cjs/loader:1246:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:4:21),
+  level: 'error',
+  message: 'uncaughtException: upload.array is not a function\n' +
+    'TypeError: upload.array is not a function\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js:388:46)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1820:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1423:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1246:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:4:21)',
+  stack: 'TypeError: upload.array is not a function\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js:388:46)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1820:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1423:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1246:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:4:21)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:41:22 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 8496,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 86499328,
+      heapTotal: 36659200,
+      heapUsed: 22238640,
+      external: 20566241,
+      arrayBuffers: 18264559
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73631.437 },
+  trace: [
+    {
+      column: 46,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js',
+      function: null,
+      line: 388,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1820,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1423,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1246,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 21,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 4,
+      method: null,
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:41:22'
+}
+{
+  error: TypeError: upload.array is not a function
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\routes\admin.js:388:46)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14)
+      at Object..js (node:internal/modules/cjs/loader:1820:10)
+      at Module.load (node:internal/modules/cjs/loader:1423:32)
+      at Function._load (node:internal/modules/cjs/loader:1246:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:4:21),
+  level: 'error',
+  message: 'uncaughtException: upload.array is not a function\n' +
+    'TypeError: upload.array is not a function\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js:388:46)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1820:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1423:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1246:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:4:21)',
+  stack: 'TypeError: upload.array is not a function\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js:388:46)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1820:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1423:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1246:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:4:21)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:43:07 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 17180,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 85618688,
+      heapTotal: 36397056,
+      heapUsed: 22907800,
+      external: 20566241,
+      arrayBuffers: 18264559
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73735.687 },
+  trace: [
+    {
+      column: 46,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js',
+      function: null,
+      line: 388,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1820,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1423,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1246,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 21,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 4,
+      method: null,
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:43:07'
+}
+{
+  error: TypeError: upload.array is not a function
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\routes\admin.js:388:46)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14)
+      at Object..js (node:internal/modules/cjs/loader:1820:10)
+      at Module.load (node:internal/modules/cjs/loader:1423:32)
+      at Function._load (node:internal/modules/cjs/loader:1246:12)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:4:21),
+  level: 'error',
+  message: 'uncaughtException: upload.array is not a function\n' +
+    'TypeError: upload.array is not a function\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js:388:46)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1820:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1423:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1246:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:4:21)',
+  stack: 'TypeError: upload.array is not a function\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js:388:46)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)\n' +
+    '    at Object..js (node:internal/modules/cjs/loader:1820:10)\n' +
+    '    at Module.load (node:internal/modules/cjs/loader:1423:32)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1246:12)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:4:21)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:43:12 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 8856,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 86106112,
+      heapTotal: 36397056,
+      heapUsed: 22926424,
+      external: 20566241,
+      arrayBuffers: 18264559
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73741.296 },
+  trace: [
+    {
+      column: 46,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\routes\\admin.js',
+      function: null,
+      line: 388,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Object..js',
+      line: 1820,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.load',
+      line: 1423,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1246,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 21,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 4,
+      method: null,
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:43:12'
+}
+{
+  error: Error: Cannot find module './routes'
+  Require stack:
+  - C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js
+      at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+      at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+      at Function._load (node:internal/modules/cjs/loader:1175:37)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:51:16)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:51:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  stack: "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:51:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:43:56 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 468,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 82690048,
+      heapTotal: 35610624,
+      heapUsed: 24330752,
+      external: 20690482,
+      arrayBuffers: 18264735
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73785.593 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._resolveFilename',
+      line: 1365,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'defaultResolveImpl',
+      line: 1021,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'resolveForCJSWithHooks',
+      line: 1026,
+      method: null,
+      native: false
+    },
+    {
+      column: 37,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1175,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 16,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 51,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:43:56'
+}
+{
+  error: Error: Cannot find module './routes'
+  Require stack:
+  - C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js
+      at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+      at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+      at Function._load (node:internal/modules/cjs/loader:1175:37)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:51:16)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:51:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  stack: "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:51:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:44:07 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 17516,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 83156992,
+      heapTotal: 35610624,
+      heapUsed: 24556456,
+      external: 20690482,
+      arrayBuffers: 18264735
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73795.968 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._resolveFilename',
+      line: 1365,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'defaultResolveImpl',
+      line: 1021,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'resolveForCJSWithHooks',
+      line: 1026,
+      method: null,
+      native: false
+    },
+    {
+      column: 37,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1175,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 16,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 51,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:44:07'
+}
+{
+  error: Error: Cannot find module './routes'
+  Require stack:
+  - C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js
+      at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+      at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+      at Function._load (node:internal/modules/cjs/loader:1175:37)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:51:16)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:51:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  stack: "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:51:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:46:09 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 8164,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 83873792,
+      heapTotal: 35086336,
+      heapUsed: 25321512,
+      external: 20690482,
+      arrayBuffers: 18264735
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73918.14 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._resolveFilename',
+      line: 1365,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'defaultResolveImpl',
+      line: 1021,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'resolveForCJSWithHooks',
+      line: 1026,
+      method: null,
+      native: false
+    },
+    {
+      column: 37,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1175,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 16,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 51,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:46:09'
+}
+{
+  error: Error: Cannot find module './routes'
+  Require stack:
+  - C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js
+      at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+      at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+      at Function._load (node:internal/modules/cjs/loader:1175:37)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:51:16)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:51:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  stack: "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:51:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:46:31 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 812,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 83431424,
+      heapTotal: 35348480,
+      heapUsed: 24691024,
+      external: 20690482,
+      arrayBuffers: 18264735
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73940.046 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._resolveFilename',
+      line: 1365,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'defaultResolveImpl',
+      line: 1021,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'resolveForCJSWithHooks',
+      line: 1026,
+      method: null,
+      native: false
+    },
+    {
+      column: 37,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1175,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 16,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 51,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:46:31'
+}
+{
+  error: Error: Cannot find module './routes'
+  Require stack:
+  - C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js
+      at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+      at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+      at Function._load (node:internal/modules/cjs/loader:1175:37)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:51:16)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:51:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  stack: "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:51:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:46:40 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 1912,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 83222528,
+      heapTotal: 35348480,
+      heapUsed: 25026904,
+      external: 20690482,
+      arrayBuffers: 18264735
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73948.843 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._resolveFilename',
+      line: 1365,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'defaultResolveImpl',
+      line: 1021,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'resolveForCJSWithHooks',
+      line: 1026,
+      method: null,
+      native: false
+    },
+    {
+      column: 37,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1175,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 16,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 51,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:46:40'
+}
+{
+  error: Error: Cannot find module './routes'
+  Require stack:
+  - C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js
+      at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+      at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+      at Function._load (node:internal/modules/cjs/loader:1175:37)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:51:16)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:51:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  stack: "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:51:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:47:05 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 19468,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 82681856,
+      heapTotal: 35610624,
+      heapUsed: 24192928,
+      external: 20690482,
+      arrayBuffers: 18264735
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73973.781 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._resolveFilename',
+      line: 1365,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'defaultResolveImpl',
+      line: 1021,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'resolveForCJSWithHooks',
+      line: 1026,
+      method: null,
+      native: false
+    },
+    {
+      column: 37,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1175,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 16,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 51,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:47:05'
+}
+{
+  error: Error: Cannot find module './routes'
+  Require stack:
+  - C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js
+      at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+      at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+      at Function._load (node:internal/modules/cjs/loader:1175:37)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:51:16)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:51:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  stack: "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:51:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:47:11 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 18200,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 83542016,
+      heapTotal: 35086336,
+      heapUsed: 25354536,
+      external: 20690482,
+      arrayBuffers: 18264735
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73979.64 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._resolveFilename',
+      line: 1365,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'defaultResolveImpl',
+      line: 1021,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'resolveForCJSWithHooks',
+      line: 1026,
+      method: null,
+      native: false
+    },
+    {
+      column: 37,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1175,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 16,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 51,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:47:11'
+}
+{
+  error: Error: Cannot find module './routes'
+  Require stack:
+  - C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js
+      at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+      at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+      at Function._load (node:internal/modules/cjs/loader:1175:37)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:51:16)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:51:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  stack: "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:51:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:47:20 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 376,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 83206144,
+      heapTotal: 35086336,
+      heapUsed: 24473000,
+      external: 20566241,
+      arrayBuffers: 18264559
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73988.828 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._resolveFilename',
+      line: 1365,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'defaultResolveImpl',
+      line: 1021,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'resolveForCJSWithHooks',
+      line: 1026,
+      method: null,
+      native: false
+    },
+    {
+      column: 37,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1175,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 16,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 51,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:47:20'
+}
+{
+  error: Error: Cannot find module './routes'
+  Require stack:
+  - C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js
+      at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+      at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+      at Function._load (node:internal/modules/cjs/loader:1175:37)
+      at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+      at Module.require (node:internal/modules/cjs/loader:1445:12)
+      at require (node:internal/modules/helpers:135:16)
+      at Object.<anonymous> (C:\Users\Lenovo\Documents\project\backend-admin-panel\server.js:51:16)
+      at Module._compile (node:internal/modules/cjs/loader:1688:14) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ]
+  },
+  level: 'error',
+  message: "uncaughtException: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:51:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  stack: "Error: Cannot find module './routes'\n" +
+    'Require stack:\n' +
+    '- C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js\n' +
+    '    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)\n' +
+    '    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)\n' +
+    '    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)\n' +
+    '    at Function._load (node:internal/modules/cjs/loader:1175:37)\n' +
+    '    at TracingChannel.traceSync (node:diagnostics_channel:322:14)\n' +
+    '    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)\n' +
+    '    at Module.require (node:internal/modules/cjs/loader:1445:12)\n' +
+    '    at require (node:internal/modules/helpers:135:16)\n' +
+    '    at Object.<anonymous> (C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js:51:16)\n' +
+    '    at Module._compile (node:internal/modules/cjs/loader:1688:14)',
+  exception: true,
+  date: 'Thu Aug 07 2025 12:47:23 GMT+0530 (India Standard Time)',
+  process: {
+    pid: 16364,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel',
+    execPath: 'C:\\Program Files\\nodejs\\node.exe',
+    version: 'v22.18.0',
+    argv: [
+      'C:\\Program Files\\nodejs\\node.exe',
+      'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js'
+    ],
+    memoryUsage: {
+      rss: 83382272,
+      heapTotal: 35348480,
+      heapUsed: 24515056,
+      external: 20690482,
+      arrayBuffers: 18264735
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 73992.281 },
+  trace: [
+    {
+      column: 15,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._resolveFilename',
+      line: 1365,
+      method: '_resolveFilename',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'defaultResolveImpl',
+      line: 1021,
+      method: null,
+      native: false
+    },
+    {
+      column: 22,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'resolveForCJSWithHooks',
+      line: 1026,
+      method: null,
+      native: false
+    },
+    {
+      column: 37,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Function._load',
+      line: 1175,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:diagnostics_channel',
+      function: 'TracingChannel.traceSync',
+      line: 322,
+      method: 'traceSync',
+      native: false
+    },
+    {
+      column: 24,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'wrapModuleLoad',
+      line: 235,
+      method: null,
+      native: false
+    },
+    {
+      column: 12,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module.require',
+      line: 1445,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 16,
+      file: 'node:internal/modules/helpers',
+      function: 'require',
+      line: 135,
+      method: null,
+      native: false
+    },
+    {
+      column: 16,
+      file: 'C:\\Users\\Lenovo\\Documents\\project\\backend-admin-panel\\server.js',
+      function: null,
+      line: 51,
+      method: null,
+      native: false
+    },
+    {
+      column: 14,
+      file: 'node:internal/modules/cjs/loader',
+      function: 'Module._compile',
+      line: 1688,
+      method: '_compile',
+      native: false
+    }
+  ],
+  service: 'api',
+  timestamp: '2025-08-07 12:47:23'
+}
