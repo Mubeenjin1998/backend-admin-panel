@@ -22,7 +22,7 @@ const {
     addStoreImages,
     removeStoreImages,
     getSubcategoriesbyCategoryId
-}= require('../controller/master/mastercontroller');
+}= require('../controller/master/masterController');
 const express = require('express');
 const router = express.Router();
 const { verifyToken, adminOnly } = require('../middleware/auth');

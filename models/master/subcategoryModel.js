@@ -14,6 +14,10 @@ const subcategorySchema = new mongoose.Schema({
     ref: 'Category',
     required: true
   },
+  image:{
+    type: String,
+    maxlength: 255
+  },
   is_active: {
     type: Boolean,
     default: true

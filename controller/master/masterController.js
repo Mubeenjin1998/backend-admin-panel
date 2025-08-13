@@ -232,7 +232,7 @@ const getSubcategoriesbyCategoryId = async (req, res) => {
       is_active: true 
     })
     .populate('category_id', 'category_name slug')
-    .select('subcategory_name slug subcategory_description image_url is_active created_at updated_at')
+    .select('subcategory_name slug subcategory_description image is_active created_at updated_at')
     .sort({ created_at: -1 });
 
     if (!subcategories || subcategories.length === 0) {

@@ -44,6 +44,7 @@ dotenv.config();
 const connectDB = require('./config/db');
 const { errorHandler, notFound } = require('./middleware/errorMiddleware');
 const adminRoutes = require('./routes/admin');
+const productRoutes = require('./routes/productRoute')
 const app = express();
 
 //================================================routes================================================
@@ -135,6 +136,7 @@ app.get('/api', (req, res) => {
 
 app.use('/api/admin', adminRoutes);
 app.use('/api/admin/master', masterRoutes);
+app.use('/api/admin/products',productRoutes)
 
 app.use(notFound);
 
