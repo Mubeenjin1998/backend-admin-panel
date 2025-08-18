@@ -1,5 +1,132 @@
 
+const { Console } = require('winston/lib/winston/transports');
+const categoryModel = require('../../models/master/categoryModel');
 const ProductStoreInventory = require('../../models/master/productStoreInventoryModel')
+const Product = require('../../models/Product')
+
+const mongoose = require('mongoose');
+
+const getAllProducts = async (req, res) => {
+  try {
+    const baseurl = `${req.protocol}://${req.hostname}:${req.app.get('port') || 5000}/uploads`;
+    let { search = '', page = 1, limit = 5, category_id, store_id } = req.query;
+    let { subcategory_id = [] } = req.body;
+
+    if (!subcategory_id) subcategory_id = [];
+    if (typeof subcategory_id === 'string') {
+      try {
+        subcategory_id = JSON.parse(subcategory_id);
+      } catch {
+        subcategory_id = subcategory_id.split(',').map(s => s.trim());
+      }
+    }
+    if (!Array.isArray(subcategory_id)) subcategory_id = [subcategory_id];
+
+    subcategory_id = subcategory_id
+      .filter(id => mongoose.Types.ObjectId.isValid(id))
+      .map(id => new mongoose.Types.ObjectId(id));
+
+    const pageNumber = Math.max(1, parseInt(page) || 1);
+    const limitNumber = Math.max(1, Math.min(100, parseInt(limit) || 5));
+    const skip = (pageNumber - 1) * limitNumber;
+
+    const searchCondition = {};
+    const andConditions = [];
+
+    if (search) {
+      andConditions.push({
+        $or: [
+          { name: { $regex: search, $options: 'i' } },
+          { description: { $regex: search, $options: 'i' } }
+        ]
+      });
+    }
+
+    if (category_id) {
+      if (!mongoose.Types.ObjectId.isValid(category_id)) {
+        return res.status(400).json({ success: false, message: "Invalid category_id" });
+      }
+
+      
+      const getAllSubcategories = async (parentId) => {
+      const subs = await categoryModel.find({ parent_id: parentId }).select('_id').lean();
+  
+      if (subs.length === 0) {
+        return [parentId];
+      }
+
+      let leafIds = [];
+     for (let sub of subs) {
+      leafIds = leafIds.concat(await getAllSubcategories(sub._id));
+     }
+    return leafIds;
+};
+
+
+      const allSubIds = await getAllSubcategories(category_id);
+
+      if (allSubIds.length === 0) {
+        return res.status(404).json({ success: false, message: "No subcategories found for this category" });
+      }
+
+      andConditions.push({ subcategory_id: { $in: allSubIds } });
+    }
+
+    if (subcategory_id.length > 0) {
+      andConditions.push({ subcategory_id: { $in: subcategory_id } });
+    }
+
+    if (store_id) {
+      if (!mongoose.Types.ObjectId.isValid(store_id)) {
+        return res.status(400).json({ success: false, message: "Invalid store_id" });
+      }
+      andConditions.push({ store_id: new mongoose.Types.ObjectId(store_id) });
+    }
+
+    if (andConditions.length > 0) {
+      searchCondition.$and = andConditions;
+    }
+
+
+    
+
+    const total = await Product.countDocuments(searchCondition);
+
+    const products = await Product.find(searchCondition)
+      .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(limitNumber)
+      .select('-__v');
+
+    const formattedProducts = products.map(product => ({
+      ...product.toObject(),
+      imageUrl: product.imageUrl
+        ? product.imageUrl.map(item => `${baseurl}/${item}`)
+        : []
+    }));
+
+    res.status(200).json({
+      success: true,
+      statusCode: 200,
+      message: products.length ? 'Products retrieved successfully' : 'No products found',
+      products: formattedProducts,
+      total,
+      page: pageNumber,
+      limit: limitNumber,
+      totalPages: Math.ceil(total / limitNumber)
+    });
+
+  } catch (error) {
+    console.error('Error retrieving products:', error);
+    res.status(500).json({
+      success: false,
+      statusCode: 500,
+      message: 'Server error',
+      error: error.message
+    });
+  }
+};
+
 
 
 const addproductInventory = async  (req, res) => {
@@ -15,13 +142,30 @@ const addproductInventory = async  (req, res) => {
       is_available
     } = req.body;
 
-    // Basic validation
     if (!product_id || !store_id || quantity === undefined || !price) {
       return res.status(400).json({
         success: false,
         message: 'Required fields: product_id, store_id, quantity, price'
       });
     }
+
+    const findproduct = await Product.findOne({_id:product_id,isActive:true});
+
+    if(!findproduct){
+      return res.status(404).json({
+        success: false,
+        statusCode:404,
+        message:"product not found"
+      })
+    }
+
+    const findstore = await Store.findOne({_id:store_id,isActive:true});
+   if(!findstore){
+    return res.status(404).json({
+      success: false,
+      message:"store not found"
+      })
+   }
 
     const inventory = new ProductStoreInventory(req.body);
     await inventory.save();
@@ -64,7 +208,6 @@ const fetchInventory =  async (req, res) => {
       max_quantity_filter
     } = req.query;
 
-    // Build filter object
     const filters = {};
     if (store_id) filters.store_id = store_id;
     if (product_id) filters.product_id = product_id;
@@ -105,6 +248,14 @@ const fetchInventory =  async (req, res) => {
 };
 
 const getproduductStoreInventory = async (req, res) => {
+  function isValidObjectId(id) {
+  return mongoose.Types.ObjectId.isValid(id);
+}
+
+let checkvalidate = isValidObjectId(req.params.id)
+if (!checkvalidate) {
+  return res.status(400).json({ success: false, message: 'Invalid product id' 
+  })}
   try {
     const inventory = await ProductStoreInventory.findById(req.params.id)
       .populate('product_id', 'name sku category description brand')
@@ -130,71 +281,66 @@ const getproduductStoreInventory = async (req, res) => {
   }
 };
 
-module.exports = { addproductInventory };
+const getProductStore =  async (req, res) => {
+  try {
+    const { productId, storeId } = req.params;
 
+    const inventory = await ProductStoreInventory.findOne({
+      product_id: productId,
+      store_id: storeId
+    })
+      .populate('product_id', 'name sku category')
+      .populate('store_id', 'name location');
 
+    if (!inventory) {
+      return res.status(404).json({
+        success: false,
+        message: 'Inventory not found for this product-store combination'
+      });
+    }
 
-// router.get('/product/:productId/store/:storeId', async (req, res) => {
-//   try {
-//     const { productId, storeId } = req.params;
+    res.json({
+      success: true,
+      data: inventory
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+      message: 'Failed to fetch inventory'
+    });
+  }
+};
 
-//     const inventory = await ProductStoreInventory.findOne({
-//       product_id: productId,
-//       store_id: storeId
-//     })
-//       .populate('product_id', 'name sku category')
-//       .populate('store_id', 'name location');
+const getStoreInventory =  async (req, res) => {
+  try {
+    const { storeId } = req.params;
+    const { is_available, low_stock } = req.query;
 
-//     if (!inventory) {
-//       return res.status(404).json({
-//         success: false,
-//         message: 'Inventory not found for this product-store combination'
-//       });
-//     }
+    const filters = { store_id: storeId };
+    if (is_available !== undefined) filters.is_available = is_available === 'true';
 
-//     res.json({
-//       success: true,
-//       data: inventory
-//     });
-//   } catch (error) {
-//     res.status(500).json({
-//       success: false,
-//       error: error.message,
-//       message: 'Failed to fetch inventory'
-//     });
-//   }
-// });
+    let inventory = await ProductStoreInventory.find(filters)
+      .populate('product_id', 'name sku category brand')
+      .sort({ updated_at: -1 });
 
-// router.get('/store/:storeId', async (req, res) => {
-//   try {
-//     const { storeId } = req.params;
-//     const { is_available, low_stock } = req.query;
+    if (low_stock === 'true') {
+      inventory = inventory.filter(item => item.quantity <= item.min_quantity);
+    }
 
-//     const filters = { store_id: storeId };
-//     if (is_available !== undefined) filters.is_available = is_available === 'true';
-
-//     let inventory = await ProductStoreInventory.find(filters)
-//       .populate('product_id', 'name sku category brand')
-//       .sort({ updated_at: -1 });
-
-//     // Filter for low stock if requested
-//     if (low_stock === 'true') {
-//       inventory = inventory.filter(item => item.quantity <= item.min_quantity);
-//     }
-
-//     res.json({
-//       success: true,
-//       data: inventory,
-//       count: inventory.length
-//     });
-//   } catch (error) {
-//     res.status(500).json({
-//       success: false,
-//       error: error.message,
-//       message: 'Failed to fetch store inventory'
-//     });
-//   }
-// });
+    res.json({
+      success: true,
+      data: inventory,
+      count: inventory.length
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+      message: 'Failed to fetch store inventory'
+    });
+  }
+};
 
 // // READ - Get inventory by product across all stores
 // // GET /api/inventory/product/:productId
@@ -579,3 +725,15 @@ module.exports = { addproductInventory };
 //     });
 //   }
 // });
+// Function-based API exports
+module.exports = {
+  // Product management
+  getAllProducts,
+  
+  // Inventory management
+  addproductInventory,
+  fetchInventory,
+  getproduductStoreInventory,
+  getProductStore,
+  getStoreInventory
+};

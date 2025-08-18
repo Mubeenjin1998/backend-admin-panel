@@ -136,7 +136,7 @@ app.get('/api', (req, res) => {
 
 app.use('/api/admin', adminRoutes);
 app.use('/api/admin/master', masterRoutes);
-app.use('/api/admin/products',productRoutes)
+app.use('/api/admin/productsss',productRoutes)
 
 app.use(notFound);
 
