@@ -1,7 +1,5 @@
-// Test data fixtures for consistent testing
 const mongoose = require('mongoose');
 
-// Sample user data
 const testUsers = [
   {
     _id: new mongoose.Types.ObjectId(),
@@ -21,7 +19,6 @@ const testUsers = [
   }
 ];
 
-// Sample category data
 const testCategories = [
   {
     _id: new mongoose.Types.ObjectId(),
@@ -39,7 +36,6 @@ const testCategories = [
   }
 ];
 
-// Sample product data
 const testProducts = [
   {
     _id: new mongoose.Types.ObjectId(),
@@ -65,7 +61,6 @@ const testProducts = [
   }
 ];
 
-// Sample store data
 const testStores = [
   {
     _id: new mongoose.Types.ObjectId(),
