@@ -1,11 +1,12 @@
 const { runSeeder } = require('./categoryseeders'); // CommonJS syntax
-
+const {runVariantsSeeder} = require('./productvarientseeders')
 const start = async () => {
   const args = process.argv.slice(2);
   const clearFirst = args.includes('--clear');
 
   try {
-    await runSeeder(clearFirst);
+    // await runSeeder(clearFirst);
+    await runVariantsSeeder(clearFirst)
     console.log('✨ Process completed successfully');
     process.exit(0);
   } catch (error) {
