@@ -45,6 +45,7 @@ const connectDB = require('./config/db');
 const { errorHandler, notFound } = require('./middleware/errorMiddleware');
 const adminRoutes = require('./routes/admin');
 const productRoutes = require('./routes/productRoute')
+const userRoutes = require('./routes/userRoute')
 const app = express();
 
 //================================================routes================================================
@@ -52,10 +53,14 @@ const masterRoutes = require('./routes/masterRoute');
 
 connectDB();
 
-app.use(helmet());
+// app.use(helmet());
+app.use(helmet({
+  crossOriginResourcePolicy: { policy: "cross-origin" }
+}));
 app.use(mongoSanitize());
 app.use(xss());
 app.use(compression());
+
 app.use(cors());
 
 
@@ -138,6 +143,8 @@ app.get('/api', (req, res) => {
 app.use('/api/admin', adminRoutes);
 app.use('/api/admin/master', masterRoutes);
 app.use('/api/admin/productsss',productRoutes)
+app.use('/api/users',userRoutes)
+
 
 app.use(notFound);
 

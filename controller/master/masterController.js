@@ -4,6 +4,7 @@ const Category = require('../../models/master/categoryModel');
 const Subcategory = require('../../models/master/subcategoryModel');
 const Brand = require('../../models/master/brandModel');
 const Store = require('../../models/master/storeModel');
+const VariantAttribute = require('../../models/master/variantAttributeModel');
 const ImageUpload = require('../../utils/imageUpload');
 const { default: mongoose } = require('mongoose');
 
@@ -1025,16 +1026,16 @@ const addStore = async (req, res) => {
       images_url
     } = req.body;
 
+   console.log(req.body,'=======================body=========================')
 
-    console.log(req.body)
 
 
-    const missingFields = [];
+
+
+   const missingFields = [];
     if (!store_name) missingFields.push('store_name');
-    if (!owner || !owner.email) missingFields.push('owner.email');
     if (!contact) missingFields.push('contact');
     if (!location) missingFields.push('location');
-    // if (!category) missingFields.push('category');
 
     if (missingFields.length > 0) {
       return res.status(400).json({
@@ -1054,10 +1055,13 @@ const addStore = async (req, res) => {
     }
 
     const emailExists = await Store.findOne({
-      'owner.email': owner.email,
+      'owner.email': req.user.email,
       status: 'active',
       deleted_at: null
     });
+
+
+    console.log(emailExists,'================email===================')
     if (emailExists) {
       return res.status(400).json({
         success: false,
@@ -1070,6 +1074,7 @@ const addStore = async (req, res) => {
       'contact.email': contact.email,
       'contact.phone.number': phone
     })
+    console.log(contactEmailExist,'================contactEmailExist===================')
 
     if (contactEmailExist) {
       return res.status(400).json({
@@ -1099,6 +1104,8 @@ const addStore = async (req, res) => {
     });
 
     const savedStore = await store.save();
+
+
 
     res.status(201).json({
       success: true,
@@ -1538,6 +1545,357 @@ const removeStoreImages = async (req, res) => {
   }
 };
 
+//=======================================================variant attributes=======================================================
+
+const addVariantAttribute = async (req, res) => {
+  try {
+    const { name, category_id, display_name, input_type, is_required, sort_order } = req.body;
+
+    if (!name) {
+      return res.status(400).json({
+        success: false,
+        statusCode: 400,
+        message: 'Variant attribute name is required'
+      });
+    }
+
+    if (!category_id || !Array.isArray(category_id) || category_id.length === 0) {
+      return res.status(400).json({
+        success: false,
+        statusCode: 400,
+        message: 'Category ID array is required and must contain at least one category'
+      });
+    }
+
+    if (!display_name) {
+      return res.status(400).json({
+        success: false,
+        statusCode: 400,
+        message: 'Display name is required'
+      });
+    }
+
+    let existingVariantAttribute = await VariantAttribute.findOne({ name: name.trim() });
+    if (existingVariantAttribute) {
+      return res.status(409).json({
+        success: false,
+        statusCode: 409,
+        message: 'Variant attribute name already exists'
+      });
+    }
+
+    const newVariantAttribute = new VariantAttribute({
+      name: name.trim(),
+      category_id: category_id,
+      display_name,
+      input_type: input_type || 'select',
+      is_required: is_required || false,
+      sort_order: sort_order || 0
+    });
+
+    await newVariantAttribute.save();
+
+    const populatedVariantAttribute = await VariantAttribute.findById(newVariantAttribute._id)
+      .populate('category_id', 'name');
+
+    res.status(201).json({
+      success: true,
+      statusCode: 201,
+      message: 'Variant attribute created successfully',
+      data: populatedVariantAttribute
+    });
+
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      statusCode: 500,
+      message: 'Failed to create variant attribute',
+      error: error.message
+    });
+  }
+};
+
+const updateVariantAttribute = async (req, res) => {
+  try {
+    const { id } = req.query;
+    const { name, category_id, display_name, input_type, is_required, sort_order } = req.body;
+
+    if (!id) {
+      return res.status(400).json({
+        success: false,
+        statusCode: 400,
+        message: 'Variant attribute ID is required'
+      });
+    }
+
+    const updateData = {
+      display_name,
+      input_type,
+      is_required,
+      sort_order,
+      updated_at: Date.now()
+    };
+
+    if (name) {
+      updateData.name = name.trim();
+      
+      const existingVariantAttribute = await VariantAttribute.findOne({
+        name: name.trim(),
+        _id: { $ne: id }
+      });
+      if (existingVariantAttribute) {
+        return res.status(409).json({
+          success: false,
+          statusCode: 409,
+          message: 'Variant attribute name already exists'
+        });
+      }
+    }
+
+    if (category_id) {
+      if (!Array.isArray(category_id) || category_id.length === 0) {
+        return res.status(400).json({
+          success: false,
+          statusCode: 400,
+          message: 'Category ID must be a non-empty array'
+        });
+      }
+      updateData.category_id = category_id;
+    }
+
+    const updatedVariantAttribute = await VariantAttribute.findByIdAndUpdate(id, updateData, { new: true });
+
+    if (!updatedVariantAttribute) {
+      return res.status(404).json({
+        success: false,
+        statusCode: 404,
+        message: 'Variant attribute not found'
+      });
+    }
+
+    const populatedVariantAttribute = await VariantAttribute.findById(updatedVariantAttribute._id)
+      .populate('category_id', 'name');
+
+    res.status(200).json({
+      success: true,
+      statusCode: 200,
+      message: 'Variant attribute updated successfully',
+      data: populatedVariantAttribute
+    });
+
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      statusCode: 500,
+      message: 'Failed to update variant attribute',
+      error: error.message
+    });
+  }
+};
+
+const getVariantAttributes = async (req, res) => {
+  const { page = 1, limit = 10, category_id } = req.query;
+  const skip = (page - 1) * limit;
+
+  try {
+    const filter = { is_active: true };
+    
+    if (category_id) {
+      if (Array.isArray(category_id)) {
+        filter.category_id = { $in: category_id };
+      } else {
+        filter.category_id = category_id;
+      }
+    }
+
+    const variantAttributes = await VariantAttribute.find(filter)
+      .populate('category_id', 'name')
+      .skip(skip)
+      .limit(parseInt(limit))
+      .sort({ sort_order: 1, created_at: -1 });
+
+    const totalVariantAttributes = await VariantAttribute.countDocuments(filter);
+
+    res.status(200).json({
+      success: true,
+      statusCode: 200,
+      message: 'Variant attributes retrieved successfully',
+      data: variantAttributes,
+      pagination: {
+        total: totalVariantAttributes,
+        page: parseInt(page),
+        limit: parseInt(limit),
+        totalPages: Math.ceil(totalVariantAttributes / limit)
+      }
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      statusCode: 500,
+      message: 'Failed to retrieve variant attributes',
+      error: error.message
+    });
+  }
+};
+
+const getVariantAttributeById = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    if (!id) {
+      return res.status(400).json({
+        success: false,
+        statusCode: 400,
+        message: 'Variant attribute ID is required'
+      });
+    }
+
+    const variantAttribute = await VariantAttribute.findById(id)
+      .populate('category_id', 'name');
+
+    if (!variantAttribute) {
+      return res.status(404).json({
+        success: false,
+        statusCode: 404,
+        message: 'Variant attribute not found'
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      statusCode: 200,
+      data: variantAttribute
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      statusCode: 500,
+      message: 'Failed to fetch variant attribute by ID',
+      error: error.message
+    });
+  }
+};
+
+
+const getVariantAttributeByCategoryId = async (req, res) => {
+  console.log("this is call ================================")
+
+  try {
+    const { category_id } = req.query;
+
+    if (!category_id) {
+      return res.status(400).json({
+        success: false,
+        statusCode: 400,
+        message: 'category_id is required'
+      });
+    }
+
+// const variantAttributes = await VariantAttribute.find({
+//   category_id: "66c7402aedea9d6a9a08d6a1"   
+// })
+// .populate('category_id', 'name');
+
+const variantAttributes = await VariantAttribute.aggregate([
+  {
+    $match: {
+      category_id: category_id  
+    }
+  },
+  {
+    $lookup: {
+      from: "variantattributevalues",
+      let: { attrId: "$_id" },
+      pipeline: [
+        {
+          $match: {
+            $expr: { $eq: ["$attribute_id", "$$attrId"] }
+          }
+        },
+        {
+          $project: {
+            _id: 1,
+            value: 1,
+            display_name: 1,
+            sort_order: 1,
+            is_active: 1
+          }
+        }
+      ],
+      as: "attributeValues"
+    }
+  },
+  {
+    $project: {
+      _id: 1,
+      name: 1,
+      display_name: 1,
+      sort_order: 1,
+      attributeValues: 1
+    }
+  }
+]);
+
+
+
+    if (!variantAttributes) {
+      return res.status(404).json({
+        success: false,
+        statusCode: 404,
+        message: 'Variant attribute not found'
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      statusCode: 200,
+      data: variantAttributes
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      statusCode: 500,
+      message: 'Failed to fetch variant attribute by ID',
+      error: error.message
+    });
+  }
+};
+
+const deleteVariantAttribute = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const deletedVariantAttribute = await VariantAttribute.findByIdAndUpdate(
+      id, 
+      { is_active: false }, 
+      { new: true }
+    );
+
+    if (!deletedVariantAttribute) {
+      return res.status(404).json({
+        success: false,
+        statusCode: 404,
+        message: 'Variant attribute not found'
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      statusCode: 200,
+      message: 'Variant attribute deleted successfully',
+      data: deletedVariantAttribute
+    });
+
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      statusCode: 500,
+      message: 'Failed to delete variant attribute',
+      error: error.message
+    });
+  }
+};
+
 
 
 module.exports = {
@@ -1564,6 +1922,12 @@ module.exports = {
   deleteStore,
   addStoreImages,
   removeStoreImages,
-  getSubcategoriesbyCategoryId
+  getSubcategoriesbyCategoryId,
+  addVariantAttribute,
+  updateVariantAttribute,
+  getVariantAttributes,
+  getVariantAttributeById,
+  deleteVariantAttribute,
+  getVariantAttributeByCategoryId
 }
 

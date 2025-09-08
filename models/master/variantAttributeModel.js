@@ -6,6 +6,9 @@ const variantAttributeSchema = new mongoose.Schema({
     required: true,
     unique: true 
   },
+  category_id:{
+    type:[]
+  },
   display_name: {
     type: String,
     required: true 

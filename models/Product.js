@@ -12,23 +12,25 @@ const ProductSchema = new mongoose.Schema({
   },
   subcategory_id:{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Subcategory',
+    ref: 'Category',
     required: true
   },
   store_id:{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Shop',
-    required: true
+    // required: true
+  },
+  brand_id:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'brands',
+    // required: true
   },
   description: String,
   price: {
     type: Number,
     required: true,
   },
-  stock: {
-    type: Number,
-    default: 0,
-  },
+
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
@@ -36,6 +38,16 @@ const ProductSchema = new mongoose.Schema({
   },
   imageUrl: {
   type: [String] 
+  },
+  status: {
+  type: String,
+  enum: ['incompleted', 'completed'],
+  default: 'incompleted',
+  },
+
+  isActive : {
+    type:Boolean,
+    default:true
   },
   createdAt: {
     type: Date,

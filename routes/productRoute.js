@@ -5,10 +5,9 @@ const { verifyToken, adminOnly } = require('../middleware/auth');
 
 // Product management routes
 router.post('/get-all-products', productController.getAllProducts);
-
-// Inventory management routes
 router.post('/add-inventory-product-variant', productController.addProductVariant);
 router.post('/add-inventory-product', verifyToken, adminOnly, productController.addproductInventory);
+
 router.get('/get-all-product-inventory', productController.fetchInventory);
 router.get('/get-product-inventory/:id', productController.getproductStoreInventory);
 router.get('/product/:productId/store/:storeId', productController.getProductStore);
@@ -22,11 +21,17 @@ router.delete('/product/:productId/store/:storeId', productController.deleteInve
 router.get('/reports/low-stock', productController.getLowStockItems);
 router.get('/reports/out-of-stock', productController.getOutOfStockItems);
 router.get('/reports/summary', productController.getInventorySummary);
+router.get('/get-product-inventory', productController.getProductforInventory);
+
+
 
 
 //======================================================
 
 router.get('/product-with-variant/:productId', productController.getProductwithVarinats);
+router.get('/all-products', productController.allEcommerceProducts);
+
+
 
 
 

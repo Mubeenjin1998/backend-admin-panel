@@ -10,7 +10,7 @@ const productVariantSchema = new mongoose.Schema({
   sku: {
     type: String,
     required: true,
-    unique: true,
+    // unique: true,
     uppercase: true,
     trim: true
   },
@@ -58,9 +58,9 @@ const productVariantSchema = new mongoose.Schema({
   }
 });
 
-// Indexes
-productVariantSchema.index({ product_id: 1 });
-productVariantSchema.index({ sku: 1 });
+
+productVariantSchema.index({ product_id: 1, sku: 1 }, { unique: true });
+
 productVariantSchema.index({ 'attributes.attribute_id': 1 });
 productVariantSchema.index({ is_active: 1 });
 
