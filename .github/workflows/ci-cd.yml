@@ -29,6 +29,6 @@ jobs:
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_KEY }}
         script: |
-          cd /home/ubuntu/my-node-app
+          cd /home/ubuntu/backend-admin-panel
           npm install
-          pm2 restart my-node-app || pm2 start src/index.js --name "my-node-app"
+          pm2 restart backend-admin-panel || pm2 start server.js --name "backend-admin-panel"
