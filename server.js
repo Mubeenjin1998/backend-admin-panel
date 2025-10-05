@@ -183,7 +183,7 @@ process.on('unhandledRejection', (reason, promise) => {
 });
 
 const PORT = process.env.PORT || 5000;
-const server = app.listen(PORT, () => {
+const server = app.listen(PORT,"0.0.0.0", () => {
   console.log(' Server Status:');
   console.log(`Port: ${PORT}`);
   console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
@@ -201,3 +201,4 @@ server.on('error', (error) => {
 });
 
 module.exports = app;
+
