@@ -20,7 +20,7 @@ jobs:
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_KEY }}
         source: "."
-        target: "/home/ubuntu/my-node-app"
+        target: "/home/ubuntu/backend-admin-panel"
 
     - name: 🚀 Restart App via SSH
       uses: appleboy/ssh-action@v1.0.0
